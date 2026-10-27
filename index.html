@@ -1,0 +1,867 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Biografía académica y profesional de Danny Caiza, estudiante de Ingeniería de Sistemas de la Escuela Politécnica Nacional.">
+    <title>Danny Caiza | Perfil Universitario</title>
+
+    <style>
+        :root {
+            --azul: #102a43;
+            --azul-claro: #176bba;
+            --celeste: #55c2e8;
+            --fondo: #f3f7fc;
+            --blanco: #ffffff;
+            --texto: #334155;
+            --gris: #64748b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: var(--fondo);
+            color: var(--texto);
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* NAVEGACIÓN */
+
+        header {
+            background: var(--azul);
+            color: white;
+            padding: 15px 8%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 3px 15px #102a4325;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 1.15rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--celeste);
+        }
+
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            gap: 22px;
+        }
+
+        nav a {
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--celeste);
+        }
+
+        /* PRESENTACIÓN PRINCIPAL */
+
+        .hero {
+            min-height: 620px;
+            padding: 75px 8%;
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr;
+            align-items: center;
+            gap: 55px;
+            background:
+                radial-gradient(circle at 90% 20%, #176bba35, transparent 30%),
+                linear-gradient(135deg, #102a43, #163d5c);
+            color: white;
+            overflow: hidden;
+        }
+
+        .etiqueta {
+            display: inline-block;
+            padding: 6px 15px;
+            border: 1px solid #55c2e888;
+            border-radius: 30px;
+            color: var(--celeste);
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.7rem, 6vw, 4.8rem);
+            line-height: 1.1;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 span {
+            color: var(--celeste);
+        }
+
+        .hero h2 {
+            font-size: 1.35rem;
+            font-weight: 500;
+            margin-bottom: 18px;
+        }
+
+        .hero p {
+            max-width: 600px;
+            color: #d6e4f0;
+            margin-bottom: 28px;
+        }
+
+        .boton {
+            display: inline-block;
+            background: var(--celeste);
+            color: var(--azul);
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .boton:hover {
+            background: white;
+            transform: translateY(-3px);
+        }
+
+        /* ESPACIO PARA LA FOTOGRAFÍA */
+
+        .foto-contenedor {
+            width: min(100%, 340px);
+            aspect-ratio: 4 / 5;
+            margin: auto;
+            border: 3px solid #55c2e8aa;
+            border-radius: 24px;
+            padding: 10px;
+            background: #ffffff10;
+            box-shadow: 0 20px 60px #00000030;
+            transform: rotate(2deg);
+        }
+
+        .foto {
+            width: 100%;
+            height: 100%;
+            border-radius: 16px;
+            overflow: hidden;
+            background: #dce9f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--azul);
+            text-align: center;
+            padding: 20px;
+        }
+
+        .foto img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .foto .icono {
+            font-size: 4rem;
+            margin-bottom: 12px;
+        }
+
+        .foto small {
+            margin-top: 8px;
+            color: var(--gris);
+        }
+
+        /* SECCIONES GENERALES */
+
+        section.contenido {
+            padding: 85px 8%;
+            scroll-margin-top: 75px;
+        }
+
+        .titulo-seccion {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .titulo-seccion span {
+            color: var(--azul-claro);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.78rem;
+            font-weight: 800;
+        }
+
+        .titulo-seccion h2 {
+            color: var(--azul);
+            font-size: clamp(2rem, 4vw, 2.7rem);
+            margin-top: 8px;
+        }
+
+        .titulo-seccion p {
+            color: var(--gris);
+            max-width: 650px;
+            margin: 10px auto 0;
+        }
+
+        /* BIOGRAFÍA */
+
+        .biografia {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+            align-items: stretch;
+        }
+
+        .tarjeta {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 8px 30px #102a430b;
+            border: 1px solid #e5edf5;
+        }
+
+        .tarjeta h3 {
+            color: var(--azul);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .tarjeta p {
+            margin-bottom: 12px;
+        }
+
+        .datos {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin-top: 20px;
+        }
+
+        .dato {
+            background: #f0f7ff;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .dato strong {
+            display: block;
+            color: var(--azul);
+            font-size: 0.9rem;
+        }
+
+        .dato span {
+            font-size: 0.9rem;
+            color: var(--gris);
+        }
+
+        /* DESTREZAS */
+
+        .seccion-destrezas {
+            background: white;
+        }
+
+        .rejilla {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .destreza {
+            padding: 28px 22px;
+            border-radius: 14px;
+            background: var(--fondo);
+            border: 1px solid #e5edf5;
+            transition: 0.3s;
+        }
+
+        .destreza:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px #102a4310;
+            border-color: var(--celeste);
+        }
+
+        .destreza .icono {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+
+        .destreza h3 {
+            color: var(--azul);
+            font-size: 1.08rem;
+            margin-bottom: 8px;
+        }
+
+        .destreza p {
+            color: var(--gris);
+            font-size: 0.93rem;
+        }
+
+        /* FORMACIÓN Y EXPERIENCIA */
+
+        .experiencia {
+            max-width: 850px;
+            margin: auto;
+            position: relative;
+        }
+
+        .experiencia::before {
+            content: "";
+            position: absolute;
+            top: 10px;
+            bottom: 10px;
+            left: 17px;
+            width: 3px;
+            background: #c7e8f8;
+        }
+
+        .evento {
+            position: relative;
+            padding-left: 55px;
+            margin-bottom: 35px;
+        }
+
+        .evento::before {
+            content: "";
+            position: absolute;
+            left: 8px;
+            top: 7px;
+            width: 18px;
+            height: 18px;
+            background: var(--azul-claro);
+            border: 4px solid #d9f2ff;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .evento .tarjeta {
+            padding: 25px;
+        }
+
+        .evento .categoria {
+            color: var(--azul-claro);
+            font-size: 0.78rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .evento h3 {
+            margin: 5px 0 8px;
+            color: var(--azul);
+        }
+
+        /* OBJETIVOS */
+
+        .objetivos {
+            background: linear-gradient(135deg, #102a43, #176bba);
+            color: white;
+            text-align: center;
+        }
+
+        .objetivos .titulo-seccion h2 {
+            color: white;
+        }
+
+        .objetivos .titulo-seccion span {
+            color: var(--celeste);
+        }
+
+        .objetivos p {
+            max-width: 800px;
+            margin: 0 auto 25px;
+            color: #e1edf7;
+            font-size: 1.08rem;
+        }
+
+        .frase {
+            max-width: 700px;
+            margin: 35px auto 0;
+            padding: 25px;
+            border-left: 4px solid var(--celeste);
+            background: #ffffff10;
+            border-radius: 8px;
+            font-style: italic;
+            font-size: 1.1rem;
+        }
+
+        /* PIE DE PÁGINA */
+
+        footer {
+            background: #0a1c2d;
+            color: #c4d4e2;
+            padding: 28px 8%;
+            text-align: center;
+            font-size: 0.88rem;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+        /* ANIMACIÓN */
+
+        .aparecer {
+            animation: aparecer 0.9s ease both;
+        }
+
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* DISEÑO PARA CELULARES Y TABLETAS */
+
+        @media (max-width: 850px) {
+            header {
+                padding: 15px 5%;
+            }
+
+            nav {
+                flex-direction: column;
+            }
+
+            nav ul {
+                justify-content: center;
+                gap: 12px 18px;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 65px 6%;
+                gap: 40px;
+            }
+
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .foto-contenedor {
+                max-width: 290px;
+            }
+
+            section.contenido {
+                padding: 65px 6%;
+            }
+
+            .biografia {
+                grid-template-columns: 1fr;
+            }
+
+            .rejilla {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 520px) {
+            .hero h1 {
+                font-size: 2.6rem;
+            }
+
+            .hero h2 {
+                font-size: 1.1rem;
+            }
+
+            .rejilla {
+                grid-template-columns: 1fr;
+            }
+
+            .datos {
+                grid-template-columns: 1fr;
+            }
+
+            .titulo-seccion h2 {
+                font-size: 1.9rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVEGACIÓN -->
+    <header>
+        <nav>
+            <a href="#inicio" class="logo">DANNY <span>CAIZA.</span></a>
+
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#biografia">Biografía</a></li>
+                <li><a href="#destrezas">Destrezas</a></li>
+                <li><a href="#experiencia">Experiencia</a></li>
+                <li><a href="#objetivos">Objetivos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- PRESENTACIÓN -->
+    <main>
+        <section class="hero" id="inicio">
+
+            <div class="aparecer">
+                <span class="etiqueta">PERFIL ACADÉMICO Y PROFESIONAL</span>
+
+                <h1>Hola, soy <span>Danny Caiza</span></h1>
+
+                <h2>Estudiante de Ingeniería de Sistemas</h2>
+
+                <p>
+                    Apasionado por la tecnología, el aprendizaje continuo
+                    y el desarrollo de habilidades que permitan transformar
+                    ideas en soluciones. Combino mi formación universitaria
+                    con mi experiencia en el ámbito profesional, buscando
+                    crecer personal y académicamente cada día.
+                </p>
+
+                <a href="#biografia" class="boton">
+                    Conoce mi historia &darr;
+                </a>
+            </div>
+
+            <!--
+                FOTO PERSONAL:
+                Guarda tu fotografía en la misma carpeta que este HTML
+                con el nombre "danny.jpg".
+                Luego reemplaza el contenido de este bloque por el img
+                que aparece en las instrucciones debajo del código.
+            -->
+            <div class="foto-contenedor aparecer">
+                <div class="foto">
+                    <img src="danny.jpg" alt="Fotografía de Danny Caiza">
+                </div>
+            </div>
+
+        </section>
+
+        <!-- BIOGRAFÍA -->
+        <section class="contenido" id="biografia">
+
+            <div class="titulo-seccion">
+                <span>Un poco sobre mí</span>
+                <h2>Mi biografía</h2>
+                <p>
+                    Conoce mi formación, mis intereses y los valores
+                    que orientan mi desarrollo personal y profesional.
+                </p>
+            </div>
+
+            <div class="biografia">
+
+                <article class="tarjeta">
+                    <h3>¿Quién soy?</h3>
+
+                    <p>
+                        Mi nombre es Danny Caiza, tengo 22 años y soy
+                        estudiante de Ingeniería de Sistemas en la
+                        Escuela Politécnica Nacional, una etapa que
+                        representa una oportunidad para fortalecer mis
+                        conocimientos y prepararme para los desafíos
+                        del mundo tecnológico.
+                    </p>
+
+                    <p>
+                        Me considero una persona proactiva, responsable
+                        y comprometida con mis objetivos. Me interesa
+                        aprender nuevas herramientas, enfrentar retos
+                        y encontrar soluciones prácticas a los problemas.
+                    </p>
+
+                    <p>
+                        Además de mis estudios, me desarrollo en el ámbito
+                        comercial como asesor de Diners Club, experiencia
+                        que contribuye al fortalecimiento de mis
+                        competencias comunicativas y profesionales.
+                    </p>
+                </article>
+
+                <article class="tarjeta">
+                    <h3>Información personal</h3>
+
+                    <p>
+                        Mi perfil combina la formación académica, el
+                        crecimiento profesional y el interés constante
+                        por adquirir nuevas competencias.
+                    </p>
+
+                    <div class="datos">
+                        <div class="dato">
+                            <strong>Nombre</strong>
+                            <span>Danny Caiza</span>
+                        </div>
+
+                        <div class="dato">
+                            <strong>Edad</strong>
+                            <span>22 años</span>
+                        </div>
+
+                        <div class="dato">
+                            <strong>Universidad</strong>
+                            <span>Escuela Politécnica Nacional</span>
+                        </div>
+
+                        <div class="dato">
+                            <strong>Carrera</strong>
+                            <span>Ingeniería de Sistemas</span>
+                        </div>
+
+                        <div class="dato">
+                            <strong>Área profesional</strong>
+                            <span>Asesor comercial</span>
+                        </div>
+
+                        <div class="dato">
+                            <strong>Empresa</strong>
+                            <span>Diners Club</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- DESTREZAS -->
+        <section class="contenido seccion-destrezas" id="destrezas">
+
+            <div class="titulo-seccion">
+                <span>Mis fortalezas</span>
+                <h2>Destrezas y habilidades</h2>
+                <p>
+                    Competencias personales y profesionales que considero
+                    fundamentales para alcanzar mis metas y trabajar
+                    de manera efectiva.
+                </p>
+            </div>
+
+            <div class="rejilla">
+
+                <article class="destreza">
+                    <div class="icono">🚀</div>
+                    <h3>Proactividad</h3>
+                    <p>
+                        Tomar la iniciativa, anticiparme a los desafíos
+                        y buscar oportunidades de mejora.
+                    </p>
+                </article>
+
+                <article class="destreza">
+                    <div class="icono">🧩</div>
+                    <h3>Resolución de problemas</h3>
+                    <p>
+                        Analizar situaciones, evaluar alternativas
+                        y proponer soluciones prácticas y eficientes.
+                    </p>
+                </article>
+
+                <article class="destreza">
+                    <div class="icono">🤝</div>
+                    <h3>Trabajo en equipo</h3>
+                    <p>
+                        Colaborar con otras personas, compartir ideas
+                        y contribuir al cumplimiento de objetivos comunes.
+                    </p>
+                </article>
+
+                <article class="destreza">
+                    <div class="icono">💬</div>
+                    <h3>Comunicación efectiva</h3>
+                    <p>
+                        Expresar ideas con claridad, escuchar activamente
+                        y mantener una comunicación profesional.
+                    </p>
+                </article>
+
+                <article class="destreza">
+                    <div class="icono">⏱️</div>
+                    <h3>Organización y disciplina</h3>
+                    <p>
+                        Gestionar el tiempo, priorizar actividades
+                        y mantener el compromiso con mis responsabilidades.
+                    </p>
+                </article>
+
+                <article class="destreza">
+                    <div class="icono">💡</div>
+                    <h3>Aprendizaje continuo</h3>
+                    <p>
+                        Adaptarme a nuevos entornos, adquirir conocimientos
+                        y mantener una actitud abierta al cambio.
+                    </p>
+                </article>
+
+                <article class="destreza">
+                    <div class="icono">🎯</div>
+                    <h3>Orientación a resultados</h3>
+                    <p>
+                        Trabajar con objetivos claros y buscar resultados
+                        mediante la constancia y la responsabilidad.
+                    </p>
+                </article>
+
+                <article class="destreza">
+                    <div class="icono">🗣️</div>
+                    <h3>Atención al cliente</h3>
+                    <p>
+                        Identificar necesidades, ofrecer una atención
+                        cordial y contribuir a una experiencia positiva.
+                    </p>
+                </article>
+
+                <article class="destreza">
+                    <div class="icono">🔄</div>
+                    <h3>Adaptabilidad</h3>
+                    <p>
+                        Afrontar cambios con flexibilidad y responder
+                        a nuevos desafíos académicos y laborales.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- FORMACIÓN Y EXPERIENCIA -->
+        <section class="contenido" id="experiencia">
+
+            <div class="titulo-seccion">
+                <span>Mi trayectoria</span>
+                <h2>Formación y experiencia</h2>
+                <p>
+                    Una combinación de preparación universitaria,
+                    capacitación y experiencia en el entorno laboral.
+                </p>
+            </div>
+
+            <div class="experiencia">
+
+                <article class="evento">
+                    <div class="tarjeta">
+                        <span class="categoria">Formación académica</span>
+                        <h3>Ingeniería de Sistemas</h3>
+                        <p>
+                            <strong>Escuela Politécnica Nacional</strong>
+                        </p>
+                        <p>
+                            Formación universitaria orientada al desarrollo
+                            de conocimientos tecnológicos, pensamiento
+                            lógico, análisis de problemas y creación
+                            de soluciones mediante sistemas informáticos.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="evento">
+                    <div class="tarjeta">
+                        <span class="categoria">Certificación · 2026</span>
+                        <h3>Concurso IEEE 2026</h3>
+                        <p>
+                            Certificado relacionado con mi participación
+                            en el concurso IEEE 2026, como parte de mi
+                            trayectoria académica y de desarrollo profesional.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="evento">
+                    <div class="tarjeta">
+                        <span class="categoria">Capacitación</span>
+                        <h3>Capacitación en Diners Club</h3>
+                        <p>
+                            Formación orientada al entorno comercial,
+                            los procesos de atención y el desarrollo
+                            de competencias para el desempeño profesional.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="evento">
+                    <div class="tarjeta">
+                        <span class="categoria">Experiencia laboral actual</span>
+                        <h3>Asesor de Diners Club</h3>
+                        <p>
+                            Actualmente trabajo como asesor de Diners Club,
+                            donde puedo fortalecer mis habilidades de
+                            comunicación, atención al cliente, orientación
+                            comercial y cumplimiento de objetivos.
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- OBJETIVOS PERSONALES -->
+        <section class="contenido objetivos" id="objetivos">
+
+            <div class="titulo-seccion">
+                <span>Mi visión de futuro</span>
+                <h2>Objetivos y aspiraciones</h2>
+            </div>
+
+            <p>
+                Mi objetivo es continuar creciendo en el ámbito académico
+                y profesional, fortalecer mis conocimientos en Ingeniería
+                de Sistemas y desarrollar competencias que me permitan
+                aportar soluciones tecnológicas innovadoras.
+            </p>
+
+            <p>
+                Aspiro a integrar la tecnología, el pensamiento analítico
+                y la experiencia profesional para participar en proyectos
+                que generen valor, resolver problemas reales y contribuir
+                positivamente a mi entorno.
+            </p>
+
+            <div class="frase">
+                "El crecimiento comienza cuando transformamos
+                cada experiencia en una oportunidad para aprender
+                y cada desafío en una razón para mejorar."
+            </div>
+
+        </section>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <p><strong>Danny Caiza</strong> | Ingeniería de Sistemas</p>
+        <p>Escuela Politécnica Nacional · Perfil académico y profesional</p>
+        <p>&copy; <span id="anio"></span> · Presentación personal</p>
+    </footer>
+
+    <script>
+        // Actualizar automáticamente el año del pie de página.
+        document.getElementById("anio").textContent =
+            new Date().getFullYear();
+    </script>
+
+</body>
+</html>
